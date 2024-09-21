@@ -2,15 +2,28 @@
 % vim: spell spelllang=en:
 
 \begin{problem}{1}
-  Let $A,B \subset \mathbb{R}^{n}$ with $A$ compact and $B$ closed. Prove that if $A \cap B = \empty$, then the distance $d(A,B) > 0$.
-  Show an example of $A,B$ both closed with $A \cap B = \empty$ and $d(A,B) = 0$.
+  Let $A,B \subset \mathbb{R}^{n}$ with $A$ compact and $B$ closed. Prove that if $A \cap B = \emptyset$, then the distance $d(A,B) > 0$.
+  Show an example of $A,B$ both closed with $A \cap B = \emptyset$ and $d(A,B) = 0$.
 \end{problem} 
 
 \begin{solution}
-  
-  \todo{Solve}
 
-  
+  Let $A \cap B = \emptyset$, and define the function $ \delta_{B} : A \to \mathbb{R}^{} $ such that $\delta_{B}(x) = d(x,B)$ for $x \in A$.
+  Since $\delta_{B}$ is continuous in $x$ and $A$ is compact, $\delta_{B}$ is compact.
+  From this we can guarantee $\inf_{}\delta_{B}(A) \in \delta_{B}(A)$.
+  If $0 \in \delta_{B}(A)$ then there must exist some $a \in A$ and $b \in B$ such that $d(a,b) = 0$.
+  However, from the definition of a metric, this only occurs when $a = b$.
+  This contradicts the previous statement that $A \cap B = \emptyset$, and so $ \inf_{}\delta_{B}(A) > 0$.
+  Thus $d(A,B) > 0$.
+
+  For the example, let $A = \mathbb{N}$ and $B = \left\{ n + \frac{1}{2n} : n \in \mathbb{N} \right\}$.
+  Since $2n > 1$, $B$ will never be an integer and so $A \cap B = \emptyset$.
+  Also, since $(n+1) + \frac{1}{2(n+1)}$ is monotone increasing and $\lim_{n\to \infty} ((n+1) + \frac{1}{2(n+1)}) - (n + \frac{1}{2n}) = 1$, we have that $A,B$ are closed and disjoint.
+  Finally, we have
+  \[
+  d(A,B) = \inf\{\left| a - b \right| : a \in A, b \in B\} = \inf\left| \frac{1}{2n} \right| = 0
+  .\] 
+
 \end{solution}
 
 \begin{problem}{2}
