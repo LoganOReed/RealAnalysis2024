@@ -31,8 +31,26 @@
 \end{problem}
     
 \begin{solution}
-  \todo{Solve}
+  Let $G(f) = \left\{ (x,f(x)) : x \in [a,b] \right\}$.
+  Take $\varepsilon > 0$, and since $f$ is uniformly continuous there exists some $\delta \in \mathbb{R}^{}$ such that $\left| x - y \right| < \delta$ implies $\left| f(x) - f(y) \right|<\varepsilon$.
+  Also, let $n \in \mathbb{N}$ such that $\frac{b-a}{n} < \delta$.
+  Then $G(f)$ is contained within 
+  \[
+    \bigcup_{i=0}^{n-1} \left[a + \frac{(b-a)i}{n}, a + \frac{(b-a)(i+1)}{n} \right] \times \left[ f\left( \frac{(b-a)i}{n} \right) - \varepsilon, f\left( \frac{(b-a)i}{n}\right)  + \varepsilon \right]
+  .\] 
+  Using sub-additivity, we have
+  \begin{equation*}
+    \begin{split}
+      &m\left( \bigcup_{i=0}^{n-1} \left[a + \frac{(b-a)i}{n}, a + \frac{(b-a)(i+1)}{n} \right] \times \left[ f\left( \frac{(b-a)i}{n} \right) - \varepsilon, f\left( \frac{(b-a)i}{n}\right)  + \varepsilon \right] \right) \\ 
+      &\leq \sum_{i=0}^{n-1} m\left(  \left[a + \frac{(b-a)i}{n}, a + \frac{(b-a)(i+1)}{n} \right] \times \left[ f\left( \frac{(b-a)i}{n} \right) - \varepsilon, f\left( \frac{(b-a)i}{n}\right)  + \varepsilon \right] \right)\\
+      &= n \frac{2\varepsilon(b-a)}{n} = 2(b-a)\varepsilon.
+    \end{split}
+  \end{equation*}
+  Finally, taking $n \to \infty$ gives us $\left| G(f) \right| = 0$.
+
 \end{solution}
+
+\pagebreak
 
 \begin{problem}{3}
 Let $A \subset \mathbb{R}^{d}$ be measurable with $|A| < \infty$.
@@ -47,12 +65,18 @@ Let $A \subset \mathbb{R}^{d}$ be measurable with $|A| < \infty$.
 \end{solution}
 
 \begin{problem}{4}
-Suppose that $E \subset \mathbb{R}^{}$ is Lebesgue measurable and $F = \sum_{x \in E}^{} \left[ x-1,x+1 \right]$ (a union of closed intervals).
+Suppose that $E \subset \mathbb{R}^{}$ is Lebesgue measurable and $F = \cup_{x \in E}^{} \left[ x-1,x+1 \right]$ (a union of closed intervals).
 Prove that $F$ is Lebesgue measurable.
 \end{problem}
 
 \begin{solution}
-  \todo{Solve 4}
+  Leveraging the fact that the measure is invariant under translation, we have
+  \[
+    \bigcup_{x \in E}[x-1,x+1] = \bigcup_{x \in E} (x-1,x+1) \cup (E - 1) \cup (E+1)
+  .\] 
+  Since all but the last two terms are open, their union is open and thus measurable.
+  As mentioned previously, the last two terms are translations of a measurable set and so they are measurable.
+  Finally, the countable union of measurable sets are measurable, thus $F$ is measurable.
 \end{solution}
 
 \begin{problem}{5}
@@ -61,7 +85,8 @@ Find $\left| A \right|$.
 \end{problem}
 
 \begin{solution}
-  \todo{Solve 5}
+  Define the function $\# : [0,1] \to \mathbb{N} $ such that the first $4$ occurs at the $\#(x)$-th digit for $x \in [0,1]$, and let $A_{k} = \left\{ x\in[0,1] : \#(x) = k \right\}$.
+  Treating the digits as combinatorial objects we have $\left| A_{k} \right| = 9^{k-1}$.
 \end{solution}
 
 \begin{problem}{6}
