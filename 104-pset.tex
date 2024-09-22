@@ -85,9 +85,27 @@ Find $\left| A \right|$.
 \end{problem}
 
 \begin{solution}
-  Define the function $\# : [0,1] \to \mathbb{N} $ such that the first $4$ occurs at the $\#(x)$-th digit for $x \in [0,1]$, and let $A_{k} = \left\{ x\in[0,1] : \#(x) = k \right\}$.
-  Treating the digits as combinatorial objects we have $\left| A_{k} \right| = 9^{k-1}$.
+  Define the function $\# : [0,1] \to \mathbb{N} $ such that the first $4$ occurs at the $(\#(x)+1)$-th digit for $x \in [0,1]$, and let $A_{k} = \left\{ x\in[0,1] : \#(x) = k \right\}$.
+  Then we have $A_{i+1} \subseteq A_{i}$ and $A = \lim_{n \to \infty} A_{n} = \bigcap_{n=1}^{ \infty } A_{n} $.
+  So, from the class notes, $m(A) = \lim_{n \to \infty} m(A_{n})$.
+  Now, let us define the set $T(X) = \left\{ x \in X : \#(x) \neq  0  \right\}$. 
+  Obviously $A_{0} = T([0,1])$, and we can see that $A_{n+1} = 10^{-(n+1)}T(10^{n+1}A_{n})$.
+  This recursive relation can be seen as bit shifting forward until first place values in the set are the same as $[0,1]$, followed by a shift back to store the data.
+  Also note that $10^{n+1}A_{n}$ is a union of finite intervals whose bounds are in $\mathbb{N}$.
+  This gives us
+  \[
+  m(T(10^{n+1}A_{n})) = 10^{n+1} \frac{9}{10} m(A_{n}) = 9(10^{n})m(A_{n}) \\
+  \] 
+  and in turn we have
+  \[
+  m(A_{n+1}) = \frac{9}{10}m(A_{n}))
+  .\] 
+  Finally, $m(A) = \lim_{n \to \infty} m(A_{n}) = 0$.
+  \todo{Go over this and give more detail to last three lines}
+
 \end{solution}
+
+\pagebreak
 
 \begin{problem}{6}
 Show that $E \subset \mathbb{R}^{n}$ is measurable if and only if 
