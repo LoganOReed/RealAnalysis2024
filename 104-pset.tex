@@ -61,7 +61,27 @@ Let $A \subset \mathbb{R}^{d}$ be measurable with $|A| < \infty$.
 \end{problem}
 
 \begin{solution}
-  \todo{Solve 3}
+  Let $f(r) = \left| A \cap \prod_{i=1}^{d } [-\frac{r}{2}, \frac{r}{2}] \right|$.
+  When $r\leq s$, $\left| \prod_{i=1}^{d } [-\frac{r}{2}, \frac{r}{2}] \right| \subset \left| \prod_{i=1}^{d } [-\frac{s}{2}, \frac{s}{2}] \right|$ and so the monotonicity of measures directly implies that $f$ is nondecreasing.
+  Also, since $\left| A \right| < \infty$, there exists some $M \in \mathbb{R}^{}$ such that $\left| A \right| < M$.
+  Then for sufficiently large $r$, $\left| f(r) \right| < M$, and so $f$ is bounded.
+  Next, fix $\varepsilon > 0$ and let $\delta = \frac{\varepsilon}{d}$.
+  Suppose $\left| x - y \right| < \delta$ and WLOG let $x \leq  y$, then
+    \begin{align*}
+      \left| f(x) - f(y) \right| &= \left| \left| A \cap \prod_{i=1}^{d } [-\frac{x}{2}, \frac{x}{2}] \right| - \left| A \cap \prod_{i=1}^{d } [-\frac{y}{2}, \frac{y}{2}] \right| \right| \\
+                                 &= \left| A \cap \left( \prod_{i=1}^{d } [-\frac{x}{2}, \frac{x}{2}] - \prod_{i=1}^{d } [-\frac{y}{2}, \frac{y}{2}] \right) \right| \tag{Class Corollary}\\
+                                 &= \left| A \cap \left( \prod_{i=1}^{d } [-\frac{y}{2}, -\frac{x}{2}] \cup  [\frac{x}{2}, \frac{y}{2}] \right) \right| \\
+                                 &\leq \left| \left( \prod_{i=1}^{d } [-\frac{y}{2}, -\frac{x}{2}] \cup  [\frac{x}{2}, \frac{y}{2}] \right) \right| \tag{Monotonicity} \\
+                                 &< d \left( \frac{\delta}{2} + \frac{\delta}{2} \right) = \varepsilon 
+    .\end{align*}
+  Thus $f$ is continuous.
+
+  For the second part of the problem, we begin by noting that $f(0) = 0$ and \\$\lim_{r \to \infty}f(r) = \left| A \right| $.
+  Then, since $f$ is continuous, the Intermediate Value Theorem gives us the existence of some $x$ such that $\left| B \right| = f(x) = \frac{1}{\sqrt{2} }\left| A \right|$.
+  Lastly, since $B$ is defined as the intersection of $A$ with other sets, $B \subset A$.
+
+  
+
 \end{solution}
 
 \begin{problem}{4}
@@ -105,7 +125,6 @@ Find $\left| A \right|$.
 
 \end{solution}
 
-\pagebreak
 
 \begin{problem}{6}
 Show that $E \subset \mathbb{R}^{n}$ is measurable if and only if 
