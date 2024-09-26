@@ -18,7 +18,15 @@
 
 
 \begin{solution}
-  \todo{Solve 2}
+  Suppose, for the sake of contradiction, that $A \subset [0,1]$ is a nonempty open set such that $E \cap A = \emptyset$.
+  Let  $a,b \in [0,1]$ such that $a < b$ and $(a,b) \subset A$.
+  Since $\left| (a,b) \right| > 0$, we have $\left| A \right|>0$ by monotonicity.
+  Then we can construct the inequality 
+  \[
+    1 = \left| E \right| < \left| E \right| + \left| A \right| = \left| E \cup A \right| \leq \left| [0,1] \right| = 1
+  .\] 
+  Since $1 \not< 1$, we have obtained a contradiction.
+  Thus $E$ is dense in $[0,1]$.
 \end{solution}
 
 \pagebreak
