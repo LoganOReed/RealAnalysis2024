@@ -1,3 +1,10 @@
+# Real Analysis 2024 nix
+run 
+```
+nix develop
+```
+to launch live updating pdf
+
 # LaTeX flake template
 
 `LaTeX` template that I use as a starting point for all my documents. It is

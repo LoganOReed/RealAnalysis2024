@@ -26,6 +26,8 @@
 
 \end{solution}
 
+\pagebreak
+
 \begin{problem}{2}
   Let $ f : [a,b] \to \mathbb{R}^{} $ be continuous. Prove the graph of $f, G(f) = \left\{ (x,f(x)) : x \in [a,b] \right\}$ is a set of measure zero in $\mathbb{R}^{2}$.
 \end{problem}
@@ -84,6 +86,8 @@ Let $A \subset \mathbb{R}^{d}$ be measurable with $|A| < \infty$.
 
 \end{solution}
 
+\pagebreak
+
 \begin{problem}{4}
 Suppose that $E \subset \mathbb{R}^{}$ is Lebesgue measurable and $F = \cup_{x \in E}^{} \left[ x-1,x+1 \right]$ (a union of closed intervals).
 Prove that $F$ is Lebesgue measurable.
@@ -98,6 +102,8 @@ Prove that $F$ is Lebesgue measurable.
   As mentioned previously, the last two terms are translations of a measurable set and so they are measurable.
   Finally, the countable union of measurable sets are measurable, thus $F$ is measurable.
 \end{solution}
+
+\pagebreak
 
 \begin{problem}{5}
 Let $A$ be the subset of $\left[ 0,1 \right]$ which consists of all numbers which do not have digit $4$ appearing in their decimal expansion.
@@ -121,10 +127,10 @@ Find $\left| A \right|$.
   m(A_{n+1}) = \frac{9}{10}m(A_{n}))
   .\] 
   Finally, $m(A) = \lim_{n \to \infty} m(A_{n}) = 0$.
-  \todo{Go over this and give more detail to last three lines}
 
 \end{solution}
 
+\pagebreak
 
 \begin{problem}{6}
 Show that $E \subset \mathbb{R}^{n}$ is measurable if and only if 
@@ -133,7 +139,11 @@ Show that $E \subset \mathbb{R}^{n}$ is measurable if and only if
 \] 
 for every subset $A$ of $\mathbb{R}^{n}$.
 \end{problem}
-
 \begin{solution}
-  \todo{Solve 6}
+  Let $E \subset \mathbb{R}^{n}$ be measurable.
+  From class we can define $H = \bigcap_{n=0}^{\infty} G_{k}$ for $G_{k}$ open such that $A \subset H$ and $\left| A \right|_{e} = \left| H \right|_{e}$.
+  From subadditivity, we have $\left| A \right|_{e} \leq  \left| A \cap E \right|_{e} + \left| A - E \right|_{e}$.
+  Note that $H,H\cap E,H - E$ are measurable.
+  Then $\left| A \cap E \right|_{e} + \left| A - E \right|_{e} \leq \left| H \cap E \right|_{e} + \left| H - E \right|_{e} = \left| H \right|_{e} = \left| A \right|_{e}$.
+  I could not figure out a proof for the converse.
 \end{solution}
