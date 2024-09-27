@@ -6,7 +6,38 @@
 \end{problem}
 
 \begin{solution}
-  \todo{Solve 1}
+  Let $\varepsilon > 0$ and suppose that $E$ is bounded.
+  Then there exists some (closed and bounded) box $I$ such that $\left| I \cap E \right| = |E|$.
+  Since $I$ and $E$ are measurable, $I - E$ is measurable and so there exists some open $V \supset I - E$ such that $\left| V \right| < \left| I - E \right| + \varepsilon$.
+  Note that $I - V$ is compact as $I$ is compact and $V$ is open.
+  From this and the previous statement we have 
+  \[
+    \begin{aligned}
+     \left| I - E \right| &> \left| V \right| - \varepsilon \\
+     \left| I \right| &> \left| V \right| + \left| I \cap E \right| - \varepsilon \\
+     \left| I - V \right| &> \left| I \cap E \right| - \varepsilon     
+    \end{aligned}
+  .\] 
+  Using this and $\left| I \cap E \right| = \left| E \right|$ we obtain 
+  \[
+  \left| I - V \right| > \left| I \cap E \right| - \varepsilon = \left| E \right| - \varepsilon
+  .\] 
+  Hence $\left| E - (I - V) \right| < \varepsilon$, and since $I - V$ is compact we have shown the desired result.
+
+  Now we will consider the case where $E$ is not bounded.
+  Let $\left\{ I_{i} \right\}_{i=1}^{\infty}$ such that $I_{i} \subset I_{i+1}$ which approaches $\mathbb{R}^{n}$, and define $E_{i} = E \cap I_{i}$.
+  Since $E = \bigcup_{i=1}^{\infty} E_{i} $ and $E_{i} \subset E_{i+1}$, we have $\lim_{i \to \infty} \left| E_{i} \right| = \left| E \right|$.
+  So we can pick $N$ such that
+  \[
+  \left| E \right| \leq \left| E_{N} \right| + \frac{\varepsilon}{2}
+  .\] 
+  Further, since $E_{N}$ is bounded we can apply the previous case to find some compact set $K \subset E_{N}$ where
+  \[
+  \left| E_{N} \right| \leq \left| K \right| + \frac{\varepsilon}{2}
+  .\] 
+  From the previous two inequalities we have that $\left| E \right| \leq \left| K \right| + \varepsilon$.
+  
+
 \end{solution}
 
 \pagebreak
