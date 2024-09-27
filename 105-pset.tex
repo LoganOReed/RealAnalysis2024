@@ -79,7 +79,37 @@
 
 
 \begin{solution}
-  \todo{Solve 3}
+  We begin by showing that $F$ is dense in $[0,1]$.
+  Assume that there exists some open ball $A = B_{r}(p)$ for $p \in [0,1]$ such that $F \cap A = \emptyset$.
+  Since $\mathbb{Q}$ is dense in $\mathbb{R}^{}$, there exists some $k \in \mathbb{N}$ so that $\left| q_{k} - p \right| < r$.
+  However, this contradicts $F \cap A = \emptyset$ and so $F$ is dense in $[0,1]$.
+
+  Now we will show that $F$ is measurable and $0 < \left| F \right| \leq \varepsilon$, and conclude that $\left| [0,1] - F \right| \geq 1 - \varepsilon$.
+  Since $F$ consists of a countable union of measurable sets and an intersection of two measurable sets, $F$ is measurable.
+  Also, since $\left| [q_{1} - \varepsilon 2^{-2}, q_{1} - \varepsilon 2^{-2}] \cap [0,1] \right| \geq \frac{\varepsilon}{4} $, we know $\left| F \right| > 0$.
+  We can calculate the measure of $E$ to be
+  \[
+    \begin{aligned}
+      |E| &= \left| \bigcup_{n=1}^{\infty}\left[q_{n} - \varepsilon 2^{-(n+1)}, q_{n} + \varepsilon 2^{-(n+1)}\right] \right| \\
+          &\leq \sum_{n=1}^{\infty} \left| \left[q_{n} - \varepsilon 2^{-(n+1)}, q_{n} + \varepsilon 2^{-(n+1)}\right] \right| \\
+          &= \sum_{n=1}^{\infty} \frac{\varepsilon}{2^{n}} \\
+          &= \varepsilon.
+    \end{aligned}
+  \] 
+  From this we have $0 < \left| F \right| \leq \varepsilon$.
+  Since $F$ is measurable, we can apply the Caratheodory condition to obtain
+  \[
+    \left| [0,1] \right| = \left| F \cap [0,1] \right| + \left| [0,1] - F \right| \leq \varepsilon + \left| [0,1] - F \right|
+  .\] 
+  Rearranging, we get $\left| [0,1] - F \right| \geq 1 - \varepsilon$.
+
+  Lastly, we will show that $F$ is not closed.
+  Assume $\overline{F}$ is open.
+  Then for some $x \in \overline{F} \cap [0,1]$ there exists a ball $B_{r}(x) \subset \overline{F}$.
+  Note that such an $x$ is guaranteed to exist since $0 < F < 1$.
+  Since $F$ is dense in $[0,1]$, there exists some $y \in F$ such that $\left| x - y  \right| < r$.
+  However, this contradicts $\overline{F}$ being open, and thus $F$ isn't closed.
+
 \end{solution}
 
 \pagebreak
