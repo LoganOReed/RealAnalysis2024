@@ -130,5 +130,29 @@
 \end{problem}
 
 \begin{solution}
-  \todo{Solve 6}
+  By outer measure subadditivity we have 
+  \[
+  m^{*}\left( \bigcup_{j=1}^{N}  A_{j} \cap A \right) \leq \sum_{j=1}^{\infty} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+  Define $B_{n} = \bigcup_{n=1}^{n}A_{n} $.
+  Consider the base case when $n = 1$.
+  Obviously $m^{*}\left( \bigcup_{j=1}^{n} A_{j} \cap A  \right) = \sum_{j=1}^{n} m^{*}\left( A_{j} \cap A \right)$
+  Then, since all $A_{j}$ are measurable we have the following for any $n \in \mathbb{N}$
+  \[
+  m^{*}(A \cap B_{n}) = m^{*}\left( \left( A \cap B_{n} \right) \cap A_{n} \right) + m^{*}\left( \left( A \cap B_{n} \right) \cap A_{n}^{c} \right) = m^{*}\left( A \cap A_{n} \right) + m^{*}\left( A \cap B_{n-1} \right)
+  .\] 
+  Thus, by induction on $n$, 
+  \[
+    m^{*}\left( \bigcup_{j=1}^{n}  A_{j} \cap A \right) = \sum_{j=1}^{n} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+  Then, by monotonicity, we have 
+  \[
+  m^{*}\left( \bigcup_{j=1}^{\infty} A_{j} \cap A  \right) \geq m^{*}\left( \bigcup_{j=1}^{n} A_{j} \cap A  \right) = \sum_{j=1}^{n} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+  Finally, since we've shown inequality in both directions, we have
+  \[
+    m^{*}\left( \bigcup_{j=1}^{N} A_{j} \cap A  \right) = \sum_{j=1}^{N} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+
+  
 \end{solution}
