@@ -124,7 +124,17 @@
 
 
 \begin{solution}
-  \todo{Solve 4}
+  Since $E,F$ are bounded, $m^{*}\left(E\right), m^{*}\left(F\right) < \infty$.
+  Then we have
+  \begin{align*}
+    \left| m^{*}\left( E \right) - m^{*}\left( F \right) \right| &= \left| (m^{*}\left( E - F \right) + m^{*}\left( E \cap F \right)) - \left( m^{*}\left( F \cap E \right) + m^{*}\left( F - E \right) \right) \right|\\
+                                                                 &= \left| m^{*}\left( E - F \right) - m^{*}\left( F - E \right) \right|\\
+                                                                 &\leq \left| m^{*}\left( E - F \right)  \right| + \left| m^{*}\left( F - E \right) \right|\\
+                                                                 &= m^{*}\left( E - F \right) + m^{*}\left( F - E \right)\\
+                                                                 &= m^{*}\left( \left( E - F \right) \cup \left( F - E \right) \right)\\
+                                                                 &= m^{*}\left( E \Delta F \right)
+  .\end{align*}
+  
 \end{solution}
 
 \pagebreak
