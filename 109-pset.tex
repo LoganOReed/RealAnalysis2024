@@ -1,0 +1,83 @@
+
+\section*{Problem 4}
+Let \( \{ f_n \} \) be a sequence of integrable functions on a measurable set \( E \) such that \( f_n \to f \) almost everywhere (a.e.) with \( f \in L(E) \). Prove
+\[
+\int_E |f - f_n| \, dx \to 0
+\]
+if and only if
+\[
+\int_E |f_n| \, dx \to \int_E |f| \, dx.
+\]
+
+\textbf{Solution:}
+
+This is an \textit{if and only if} statement, so we will prove it in two parts: the \textbf{\textquotedblleft if\textquotedblright} direction and the \textbf{\textquotedblleft only if\textquotedblright} direction.
+
+\subsection*{Part 1: Prove the "If" Direction}
+Assume that
+\[
+\int_E |f_n| \, dx \to \int_E |f| \, dx.
+\]
+We want to show that
+\[
+\int_E |f - f_n| \, dx \to 0.
+\]
+
+\textbf{Proof:}
+
+1. By the triangle inequality, we have
+   \[
+   |f - f_n| \leq |f| + |f_n|.
+   \]
+   Since \( f_n \to f \) a.e. and \( f, f_n \in L(E) \), the sequence \( \{ |f_n| \} \) is dominated by an integrable function.
+
+2. Now, observe that
+   \[
+   \left| \int_E |f| \, dx - \int_E |f_n| \, dx \right| \to 0.
+   \]
+   This implies that the sequence \( \int_E |f_n| \, dx \) is converging to \( \int_E |f| \, dx \).
+
+3. By Fatou's Lemma and using the fact that \( f_n \to f \) a.e., we conclude:
+   \[
+   \int_E |f - f_n| \, dx \to 0.
+   \]
+   
+Thus, the "if" direction holds.
+
+\subsection*{Part 2: Prove the "Only If" Direction}
+Assume that
+\[
+\int_E |f - f_n| \, dx \to 0.
+\]
+We want to show that
+\[
+\int_E |f_n| \, dx \to \int_E |f| \, dx.
+\]
+
+\textbf{Proof:}
+
+1. By the reverse triangle inequality, we have
+   \[
+   \left| \int_E |f_n| \, dx - \int_E |f| \, dx \right| \leq \int_E |f - f_n| \, dx.
+   \]
+
+2. Since \( \int_E |f - f_n| \, dx \to 0 \), it follows that
+   \[
+   \left| \int_E |f_n| \, dx - \int_E |f| \, dx \right| \to 0.
+   \]
+   This implies that
+   \[
+   \int_E |f_n| \, dx \to \int_E |f| \, dx.
+   \]
+
+This completes the proof for the "only if" direction. 
+
+\subsection*{Conclusion}
+We have shown that
+\[
+\int_E |f - f_n| \, dx \to 0
+\]
+if and only if
+\[
+\int_E |f_n| \, dx \to \int_E |f| \, dx.
+\]

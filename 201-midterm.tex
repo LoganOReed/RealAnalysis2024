@@ -1,0 +1,189 @@
+%! TEX root = **/000-main.tex
+% vim: spell spelllang=en:
+
+\begin{problem}{1}
+  Let $f_{k},f : E \to \mathbb{R}^{}$ be integrable functions in $E$ with $ \int_{ E} \! |f_{k}(x) - f(x)| \, \mathrm{d}x \to 0$ as $k \to \infty$.
+  Prove that $f_{k} \to f$ in measure.
+\end{problem}
+
+\begin{solution}
+  Fix an $\varepsilon > 0$.
+  Note that since $f_{k},f$ are integrable, $f_{k}$ and $f$ are measurable.
+  By Tchebyshev's Inequality,
+  \[
+  \left| \left\{ \left| f_{k} - f \right| > \varepsilon \right\} \right| \leq \frac{1}{\varepsilon} \int_{ E} \! \left| f_{k}(x) - f(x) \right| \, \mathrm{d}x 
+  .\] 
+  Now, taking $k \to \infty$,
+  \[
+  \lim_{k \to \infty} \left| \left\{ \left| f_{k} - f \right| > \varepsilon \right\} \right| \leq \lim_{k \to \infty} \frac{1}{\varepsilon} \int_{ E} \! \left| f_{k}(x) - f(x) \right| \, \mathrm{d}x = 0
+  .\] 
+  Thus $f_{k} \to f$ in measure.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{2}
+  Recall that a function $f$ is said to be \textbf{Borel measurable} if $\{x : f(x) > a\}$ is a Borel set for every $a \in \mathbb{R}$. Let the functions below be defined on a set $E$. Prove the following:
+  \begin{enumerate}
+    \item[a.] If $f$ is Borel measurable, then $\{x : f(x) < a\}$ is a Borel set for all $a \in \mathbb{R}$.
+    \item[b.] If $\alpha \in \mathbb{R}$ and $f$ is a Borel measurable function, then $\alpha f$ and $f + \alpha$ are Borel measurable.
+    \item[c.] If $f$ and $g$ are Borel measurable functions, then $f + g$ is Borel measurable.
+    \item[d.] If $\{f_k\}$ is a pointwise convergent sequence of Borel measurable functions, then $\lim_{k \to \infty} f_k$ is Borel measurable.
+  \end{enumerate}
+\end{problem}
+
+\begin{solution}
+  \textbf{a.} Let $f$ be Borel measurable and fix an $a \in \mathbb{R}^{}$.
+  Then, for all $k \in \mathbb{N}$, $\left\{ f > a - \frac{1}{k} \right\}$ is a Borel set.
+  Since $\sigma$-algebras are closed under countable intersections,
+  \[
+  \left\{ f \geq a \right\} = \bigcap_{k=1}^{\infty} \left\{ f > a - \frac{1}{k} \right\}
+  \] 
+  is a Borel set as well.
+  Finally, since $\{x : f(x) < a\} = \left\{ f \geq a \right\}^{c}$, $\{x : f(x) < a\}$ is a Borel set.
+
+  \textbf{b.} Let $\alpha \in \mathbb{R}^{}$ and $f$ Borel measurable.
+  Fix an $a \in \mathbb{R}^{}$.
+  For the function $\alpha + f$ we have $\left\{ \alpha + f > a \right\} = \left\{ f > a - \alpha \right\}$.
+  Since $f$ is Borel measurable, $\alpha + f$ is a Borel measurable function.
+  To show that $\alpha f$ is a Borel measurable function, we will consider three cases.
+  First, assume $\alpha > 0$.
+  Since $f$ is Borel measurable, $\left\{ f > \frac{a}{\alpha} \right\}$ is a Borel set.
+  Then $ \left\{ \alpha f > a \right\} = \left\{ f > \frac{a}{\alpha} \right\}$ is a Borel set, and so $\alpha f$ is a Borel measurable function.
+  Second, assume $\alpha < 0$.
+  Consider $\left\{ \alpha f > a \right\} = \left\{ f < \frac{a}{\alpha} \right\}$.
+  By part a and since $f$ is Borel measurable, $\left\{ f < \frac{a}{\alpha} \right\}$ is a Borel set.
+  Thus $\alpha f$ is Borel measurable.
+  Third, assume $\alpha = 0$.
+  Consider $\left\{ \alpha f > a \right\} = \left\{ 0 > a \right\}$ which is $\varnothing$ if $a \leq 0$ and the domain of $f$.
+  Both of these are Borel sets, so $\alpha f$ is borel measurable.
+  Since these three cases encompass all possible $\alpha$, $\alpha f$ is Borel measurable.
+  Therefore $\alpha f$ and $\alpha + f$ are Borel measurable functions.
+
+  \textbf{c.} Let $f,g$ be measurable functions, and fix some $a \in \mathbb{R}^{}$.
+  Consider 
+   \[
+   \left\{ f + g > a \right\} = \bigcup_{q \in \mathbb{Q}} \left[ \left\{ f > q \right\} \cup \left\{ g > a - q \right\} \right] 
+   .\] 
+   Since, for all $q \in \mathbb{Q}$, $\left\{ f > q \right\}$ and $\left\{ g > a - q \right\}$ are both Borel sets $\left\{ f + g > a \right\}$ is a Borel set.
+   Note that this follows from $\sigma$-algebras being closed under countable unions.
+   Thus $f + g$ is Borel measurable.
+
+   \textbf{d.} Let $\left\{ f_{k} \right\}$ be a pointwise convergent sequence of Borel measurable functions, and let $f = \lim_{k \to \infty} f_{k}$.
+   Consider  
+   \[
+   \left\{ f > a \right\} = \bigcup_{n=1}^{\infty}  \bigcap_{k = 1}^{\infty} \left\{ f_{k} > a - \frac{1}{n} \right\}
+   .\] 
+   Since $f_{k}$ is Borel measurable for all $k$, $\left\{ f_{k} > b \right\}$ is a Borel set for all $b \in \mathbb{R}^{}$.
+   Further, as $\sigma$-algebras are closed under countable unions and intersections,  $\left\{ f > a \right\}$ is a Borel set.
+   Thus $\lim_{k \to \infty} f_{k}$ is Borel measurable.
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{3}
+  Let $g$ be an integrable function on $\mathbb{R}$, i.e., $\int_{\mathbb{R}} |g(x)| dx < \infty$; and let $f : \mathbb{R} \to \mathbb{R}$ be measurable, $|f(x)| \leq M$ for almost every $x \in \mathbb{R}$, and $f$ is continuous at $x = 0$ with $f(0) = 1$. Prove that:
+  \[
+  \lim_{n \to \infty} \int_{-n}^{n} f(x/n)g(x) \, dx = \int_{-\infty}^{\infty} g(x) \, dx.
+  \]
+\end{problem}
+
+\begin{solution}
+Define $f_{n}(x) = \chi_{\left[ -n,n \right]}(x) f\left( \frac{x}{n} \right) g(x)$.
+Since $f$ is continuous at $x = 0$, $f\left( \frac{x}{n} \right) \to f(0) = 1$ as $n \to \infty$.
+Also, note that $\chi_{\left[ -n,n \right]} \to \chi_{\mathbb{R}^{}}$ as $n \to \infty$.
+So $\lim_{n \to \infty} f_{n}(x) = g(x)$.
+Define $\phi = M |g|$, and note that $\phi \in L(\mathbb{R}^{})$ as $g \in L(\mathbb{R}^{})$
+From the definition of $M$, 
+\[
+  \left| f_{n}(x) \right| =  \left| \chi_{\left[ -n,n \right]}(x)f\left( \frac{x}{n} \right)g(x) \right| \leq M \left| g(x) \right|
+.\] 
+Since $\left| f_{n} \right| \leq \phi$ and $f_{n} \to g$, by the DCT
+\[
+  \begin{aligned}
+    \lim_{n \to \infty} \int_{ -n}^{n} \! f(\frac{x}{n}) g(x) \, \mathrm{d}x &= \lim_{n \to \infty} \int_{ \mathbb{R}^{}} \! \chi_{\left[ -n,n \right]}(x) f\left( \frac{x}{n} \right) g(x) \, \mathrm{d}x\\
+     &=  \int_{ \mathbb{R}^{}} \! \lim_{n \to \infty} \chi_{\left[ -n,n \right]}(x) f\left( \frac{x}{n} \right) g(x) \, \mathrm{d}x \\
+     &=  \int_{ -\infty}^{\infty} \! g(x) \, \mathrm{d}x 
+  \end{aligned}
+.\] 
+\end{solution}
+
+\pagebreak
+
+
+\begin{problem}{4}
+  Let $f$ be Lebesgue integrable on $\mathbb{R}$ (i.e., $f \in L(\mathbb{R})$) and define $F(x) = \int_{-\infty}^{x} f(t) \, dt$. Show that $F$ is continuous on $\mathbb{R}$.
+\end{problem}
+
+\begin{solution}
+  Consider 
+  \[
+  \begin{aligned}
+    F(x+h) - F(x) &= \int_{ -\infty}^{x + h} \! f(t) \, \mathrm{d}t - \int_{ -\infty}^{x} \! f(t) \, \mathrm{d}t \\
+                  &= \int_{ \mathbb{R}^{}} \! \left[ \chi_{\left[ -\infty, x + h \right]} - \chi_{\left[ -\infty, x \right]} \right] f(t) \, \mathrm{d}t \\
+                  &= \int_{ \mathbb{R}^{}} \! \chi_{\left[ x, x + h \right]}(t) f(t)  \, \mathrm{d}t
+  \end{aligned}
+  .\] 
+  Define $\phi = \left| f \right|$, then $\chi_{\left[ x, x + h \right]}(t) f(t) \leq \left| f(t) \right| = \phi(t)$.
+  Also note that $\lim_{n \to \infty} \chi_{\left[ x, x + \frac{1}{n} \right]}(t) f(t) = 0$ almost everywhere.
+  Then, by DCT,
+  \[
+  \begin{aligned}
+    \lim_{n \to \infty} \left| F\left( x + \frac{1}{n} \right) - F(x) \right| &= \lim_{n \to \infty}  \left| \int_{ \mathbb{R}^{}} \! \chi_{\left[ x, x + h \right]}(t) f(t)  \, \mathrm{d}t \right| \\
+                                                                              &\leq \lim_{n \to \infty}   \int_{ \mathbb{R}^{}} \! \left| \chi_{\left[ x, x + h \right]}(t) f(t) \right| \, \mathrm{d}t \\
+                                                                              &=  \int_{ \mathbb{R}^{}} \! \lim_{n \to \infty} \left| \chi_{\left[ x, x + h \right]}(t) f(t) \right| \, \mathrm{d}t \\
+                                                                              &= 0
+  \end{aligned}
+  .\] 
+  Thus $\left| F(x + h) - F(x) \right| \to 0$ as $h \to 0$, so $F$ is continuous on $\mathbb{R}^{}$.
+\end{solution}
+
+
+\pagebreak
+
+
+\begin{problem}{5}
+  Let $f$ be a continuous function that is differentiable. Show that $f'(x)$ is Borel measurable. (Be careful — $f'(x)$ is not necessarily continuous.)
+\end{problem}
+
+\begin{solution}
+  Define $f_{n}(x) = \frac{f\left( x+1/n \right) - f(x)}{1/n}$ for $n \in \mathbb{N}$.
+  Since Borel measurable functions are closed under addition and scalar multiplication, $f_{n}$ is Borel measurable for all $n \in \mathbb{N}$.
+  Further, since $f$ is differentiable, $f_{k}$ is pointwise convergent to $f'$.
+  Thus, by problem 2d., $f'$ is Borel measurable.
+  
+
+\end{solution}
+
+
+\pagebreak
+
+
+\begin{problem}{6}
+  Show that for any measurable sets $A_k$:
+  \[
+  \left| \liminf A_k \right| \leq \liminf \left| A_k \right|,
+  \]
+  where $\liminf A_k = \bigcup_{n\geq 1} \bigcap_{k\geq n} A_k$.
+\end{problem}
+
+\begin{solution}
+  By monotonicity of measure, $\left| \bigcap_{n=k}^{\infty} A_{n} \right| \leq \left| A_{l} \right|$ for all $l \geq k$.
+  So $\left| \bigcap_{n=k}^{\infty} A_{n} \right| \leq \inf_{n \geq k} \left\{ \left| A_{n} \right| \right\}$.
+  Define $E_{k} = \bigcap_{n = k}^{\infty} A_{n}$.
+  We have
+  \[
+  E_{k} = \bigcap_{n = k}^{\infty} A_{n} = A_{k} \cap \left( \bigcap_{n = k + 1}^{\infty} A_{n} \right) \subset \bigcap_{n = k + 1}^{\infty} A_{n} = E_{k+1}
+  .\] 
+  Now, since $E_{k} \subset E_{k+1}$, using a property from notes 6,
+  \[
+  \left| \bigcup_{k\geq 1} \bigcap_{n\geq k} A_n \right| = \left| \bigcup_{k=1}^{\infty} E_{k}  \right| = \lim_{k \to \infty} \left| E_{k} \right| = \lim_{k \to \infty} \left| \bigcap_{n\geq k} A_n \right|
+  .\] 
+  Combining both of these, we get
+  \[
+  \left| \liminf A_k \right| = \left| \bigcup_{k\geq 1} \bigcap_{n\geq k} A_n \right| = \lim_{k \to \infty} \left| \bigcap_{n\geq k} A_n \right| \leq \liminf \left| A_k \right|
+  .\] 
+
+\end{solution}
+

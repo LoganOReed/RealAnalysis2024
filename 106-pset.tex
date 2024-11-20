@@ -1,0 +1,198 @@
+%! TEX root = **/000-main.tex
+% vim: spell spelllang=en:
+
+\begin{problem}{1}
+  Prove that if $E$ is a Lebesgue measurable subset of $\mathbb{R}^{n}$ with $\left| E \right| < \infty$ then for all $\varepsilon > 0$ there exists a compact set $K$ such that $K \subset E$ and $\left| E - K \right| < \varepsilon$.
+\end{problem}
+
+\begin{solution}
+  Let $\varepsilon > 0$ and suppose that $E$ is bounded.
+  Then there exists some (closed and bounded) box $I$ such that $\left| I \cap E \right| = |E|$.
+  Since $I$ and $E$ are measurable, $I - E$ is measurable and so there exists some open $V \supset I - E$ such that $\left| V \right| < \left| I - E \right| + \varepsilon$.
+  Note that $I - V$ is compact as $I$ is compact and $V$ is open.
+  From this and the previous statement we have 
+  \[
+    \begin{aligned}
+     \left| I - E \right| &> \left| V \right| - \varepsilon \\
+     \left| I \right| &> \left| V \right| + \left| I \cap E \right| - \varepsilon \\
+     \left| I - V \right| &> \left| I \cap E \right| - \varepsilon     
+    \end{aligned}
+  .\] 
+  Using this and $\left| I \cap E \right| = \left| E \right|$ we obtain 
+  \[
+  \left| I - V \right| > \left| I \cap E \right| - \varepsilon = \left| E \right| - \varepsilon
+  .\] 
+  Hence $\left| E - (I - V) \right| < \varepsilon$, and since $I - V$ is compact we have shown the desired result.
+
+  Now we will consider the case where $E$ is not bounded.
+  Let $\left\{ I_{i} \right\}_{i=1}^{\infty}$ such that $I_{i} \subset I_{i+1}$ which approaches $\mathbb{R}^{n}$, and define $E_{i} = E \cap I_{i}$.
+  Since $E = \bigcup_{i=1}^{\infty} E_{i} $ and $E_{i} \subset E_{i+1}$, we have $\lim_{i \to \infty} \left| E_{i} \right| = \left| E \right|$.
+  So we can pick $N$ such that
+  \[
+  \left| E \right| \leq \left| E_{N} \right| + \frac{\varepsilon}{2}
+  .\] 
+  Further, since $E_{N}$ is bounded we can apply the previous case to find some compact set $K \subset E_{N}$ where
+  \[
+  \left| E_{N} \right| \leq \left| K \right| + \frac{\varepsilon}{2}
+  .\] 
+  From the previous two inequalities we have that $\left| E \right| \leq \left| K \right| + \varepsilon$.
+  
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{2}
+  Let $E \subset [0,1]$ be a measurable set with $\left| E \right| = 1$. Prove that $E$ is dense in $[0,1]$.
+\end{problem}
+
+
+
+\begin{solution}
+  Suppose, for the sake of contradiction, that $A \subset [0,1]$ is a nonempty open set such that $E \cap A = \emptyset$.
+  Let  $a,b \in [0,1]$ such that $a < b$ and $(a,b) \subset A$.
+  Since $\left| (a,b) \right| > 0$, we have $\left| A \right|>0$ by monotonicity.
+  Then we can construct the inequality 
+  \[
+    1 = \left| E \right| < \left| E \right| + \left| A \right| = \left| E \cup A \right| \leq \left| [0,1] \right| = 1
+  .\] 
+  Since $1 \not< 1$, we have obtained a contradiction.
+  Thus $E$ is dense in $[0,1]$.
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{3}
+  Let $0 < \varepsilon < 1$ and let $\left\{ q_{n} \right\}_{n=1}^{\infty}$ be an enumeration of all rational numbers in $[0,1]$.
+  Let 
+  \[
+    E = \bigcup_{n=1}^{\infty}\left[q_{n} - \varepsilon 2^{-(n+1)}, q_{n} + \varepsilon 2^{-(n+1)}\right]
+  \] 
+  and set $F = E \cap [0,1]$. Prove that
+  \begin{enumerate}
+    \item $F$ is dense in $[0,1]$
+    \item $F$ is measurable and $0 < \left| F \right| \leq \varepsilon$, conclude that $\left| [0,1] - F \right| \geq 1 - \varepsilon$ 
+    \item $F$ is not closed.
+  \end{enumerate}
+
+\end{problem}
+
+
+\begin{solution}
+  We begin by showing that $F$ is dense in $[0,1]$.
+  Assume that there exists some open ball $A = B_{r}(p)$ for $p \in [0,1]$ such that $F \cap A = \emptyset$.
+  Since $\mathbb{Q}$ is dense in $\mathbb{R}^{}$, there exists some $k \in \mathbb{N}$ so that $\left| q_{k} - p \right| < r$.
+  However, this contradicts $F \cap A = \emptyset$ and so $F$ is dense in $[0,1]$.
+
+  Now we will show that $F$ is measurable and $0 < \left| F \right| \leq \varepsilon$, and conclude that $\left| [0,1] - F \right| \geq 1 - \varepsilon$.
+  Since $F$ consists of a countable union of measurable sets and an intersection of two measurable sets, $F$ is measurable.
+  Also, since $\left| [q_{1} - \varepsilon 2^{-2}, q_{1} - \varepsilon 2^{-2}] \cap [0,1] \right| \geq \frac{\varepsilon}{4} $, we know $\left| F \right| > 0$.
+  We can calculate the measure of $E$ to be
+  \[
+    \begin{aligned}
+      |E| &= \left| \bigcup_{n=1}^{\infty}\left[q_{n} - \varepsilon 2^{-(n+1)}, q_{n} + \varepsilon 2^{-(n+1)}\right] \right| \\
+          &\leq \sum_{n=1}^{\infty} \left| \left[q_{n} - \varepsilon 2^{-(n+1)}, q_{n} + \varepsilon 2^{-(n+1)}\right] \right| \\
+          &= \sum_{n=1}^{\infty} \frac{\varepsilon}{2^{n}} \\
+          &= \varepsilon.
+    \end{aligned}
+  \] 
+  From this we have $0 < \left| F \right| \leq \varepsilon$.
+  Since $F$ is measurable, we can apply the Caratheodory condition to obtain
+  \[
+    \left| [0,1] \right| = \left| F \cap [0,1] \right| + \left| [0,1] - F \right| \leq \varepsilon + \left| [0,1] - F \right|
+  .\] 
+  Rearranging, we get $\left| [0,1] - F \right| \geq 1 - \varepsilon$.
+
+  Lastly, we will show that $F$ is not closed.
+  Assume $\overline{F}$ is open.
+  Then for some $x \in \overline{F} \cap [0,1]$ there exists a ball $B_{r}(x) \subset \overline{F}$.
+  Note that such an $x$ is guaranteed to exist since $0 < F < 1$.
+  Since $F$ is dense in $[0,1]$, there exists some $y \in F$ such that $\left| x - y  \right| < r$.
+  However, this contradicts $\overline{F}$ being open, and thus $F$ isn't closed.
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{4}
+  Let $E,F \subset \mathbb{R}^{n}$ be bounded sets and consider the symmetric difference $E \Delta F = \left( E - F \right) \cup \left( F - E \right) $.
+  Prove that
+  \[
+    \left| m^{*}(E) - m^{*}(F) \right| \leq m^{*}(E \Delta F)
+  .\] 
+\end{problem}
+
+
+\begin{solution}
+  Since $E,F$ are bounded, $m^{*}\left(E\right), m^{*}\left(F\right) < \infty$.
+  Then we have
+  \begin{align*}
+    \left| m^{*}\left( E \right) - m^{*}\left( F \right) \right| &= \left| (m^{*}\left( E - F \right) + m^{*}\left( E \cap F \right)) - \left( m^{*}\left( F \cap E \right) + m^{*}\left( F - E \right) \right) \right|\\
+                                                                 &= \left| m^{*}\left( E - F \right) - m^{*}\left( F - E \right) \right|\\
+                                                                 &\leq \left| m^{*}\left( E - F \right)  \right| + \left| m^{*}\left( F - E \right) \right|\\
+                                                                 &= m^{*}\left( E - F \right) + m^{*}\left( F - E \right)\\
+                                                                 &= m^{*}\left( \left( E - F \right) \cup \left( F - E \right) \right)\\
+                                                                 &= m^{*}\left( E \Delta F \right)
+  .\end{align*}
+  
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{5}
+  Suppose that $E$ is a given set, and $\mathcal{O}_{n}$ is the open set
+  \[
+  \mathcal{O}_{n} = \left\{ x : d(x,E) < \frac{1}{n} \right\}
+  .\] 
+  Show that if E is compact, then $|E| = \lim_{n \to \infty} \left| \mathcal{O}_{n} \right|$.
+\end{problem}
+
+\begin{solution}
+  Let $E$ be compact. 
+  Then $E$ is bounded, and so $\mathcal{O}_{1}$ is bounded.
+  Since $\mathcal{O}_{1}$ is bounded, $\left| \mathcal{O}_{1} \right| < \infty$.
+  Finally, since $\bigcap_{n=1}^{\infty}\mathcal{O}_{n} = E$ and $\mathcal{O}_{1} \supset \mathcal{O}_{2} \supset \ldots $ we have
+  \[
+  \left| E \right| = \left| \bigcap_{n=1}^{\infty} \mathcal{O}_{n} \right| = \lim_{n \to \infty} \left| \mathcal{O}_{n} \right|
+  .\] 
+
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{6}
+  Let $\left\{ A_{j} \right\}_{j=1}^{\infty}$ be a disjoint sequence of measurable sets.
+  Prove that for any set $A \subset \mathbb{R}^{n}$ we have 
+  \[
+  m^{*}\left( \bigcup_{j=1}^{N} A_{j} \cap A  \right) = \sum_{j=1}^{N} m^{*}\left( A_{j} \cap A \right)
+  \] 
+  for each $N$.
+\end{problem}
+
+\begin{solution}
+  By outer measure subadditivity we have 
+  \[
+  m^{*}\left( \bigcup_{j=1}^{N}  A_{j} \cap A \right) \leq \sum_{j=1}^{\infty} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+  Define $B_{n} = \bigcup_{n=1}^{n}A_{n} $.
+  Consider the base case when $n = 1$.
+  Obviously $m^{*}\left( \bigcup_{j=1}^{n} A_{j} \cap A  \right) = \sum_{j=1}^{n} m^{*}\left( A_{j} \cap A \right)$
+  Then, since all $A_{j}$ are measurable we have the following for any $n \in \mathbb{N}$
+  \[
+  m^{*}(A \cap B_{n}) = m^{*}\left( \left( A \cap B_{n} \right) \cap A_{n} \right) + m^{*}\left( \left( A \cap B_{n} \right) \cap A_{n}^{c} \right) = m^{*}\left( A \cap A_{n} \right) + m^{*}\left( A \cap B_{n-1} \right)
+  .\] 
+  Thus, by induction on $n$, 
+  \[
+    m^{*}\left( \bigcup_{j=1}^{n}  A_{j} \cap A \right) = \sum_{j=1}^{n} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+  Then, by monotonicity, we have 
+  \[
+  m^{*}\left( \bigcup_{j=1}^{\infty} A_{j} \cap A  \right) \geq m^{*}\left( \bigcup_{j=1}^{n} A_{j} \cap A  \right) = \sum_{j=1}^{n} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+  Finally, since we've shown inequality in both directions, we have
+  \[
+    m^{*}\left( \bigcup_{j=1}^{N} A_{j} \cap A  \right) = \sum_{j=1}^{N} m^{*}\left( A_{j} \cap A \right)
+  .\] 
+
+  
+\end{solution}
