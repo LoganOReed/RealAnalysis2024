@@ -70,24 +70,20 @@
 \end{problem}
 
 \begin{solution}
-  Let $f(r) = \left| A \cap \prod_{i=1}^{d } [-\frac{r}{2}, \frac{r}{2}] \right|$.
-  When $r\leq s$, $\left| \prod_{i=1}^{d } [-\frac{r}{2}, \frac{r}{2}] \right| \subset \left| \prod_{i=1}^{d } [-\frac{s}{2}, \frac{s}{2}] \right|$ and so the monotonicity of measures directly implies that $f$ is nondecreasing.
-  Also, since $\left| A \right| < \infty$, there exists some $M \in \mathbb{R}^{}$ such that $\left| A \right| < M$.
-  Then for sufficiently large $r$, $\left| f(r) \right| < M$, and so $f$ is bounded.
-  Next, fix $\varepsilon > 0$ and let $\delta = \frac{\varepsilon}{d}$.
-  Suppose $\left| x - y \right| < \delta$ and WLOG let $x \leq  y$, then
-    \begin{align*}
-      \left| f(x) - f(y) \right| &= \left| \left| A \cap \prod_{i=1}^{d } [-\frac{x}{2}, \frac{x}{2}] \right| - \left| A \cap \prod_{i=1}^{d } [-\frac{y}{2}, \frac{y}{2}] \right| \right| \\
-                                 &= \left| A \cap \left( \prod_{i=1}^{d } [-\frac{x}{2}, \frac{x}{2}] - \prod_{i=1}^{d } [-\frac{y}{2}, \frac{y}{2}] \right) \right| \tag{Class Corollary}\\
-                                 &= \left| A \cap \left( \prod_{i=1}^{d } [-\frac{y}{2}, -\frac{x}{2}] \cup  [\frac{x}{2}, \frac{y}{2}] \right) \right| \\
-                                 &\leq \left| \left( \prod_{i=1}^{d } [-\frac{y}{2}, -\frac{x}{2}] \cup  [\frac{x}{2}, \frac{y}{2}] \right) \right| \tag{Monotonicity} \\
-                                 &< d \left( \frac{\delta}{2} + \frac{\delta}{2} \right) = \varepsilon 
-    .\end{align*}
-  Thus $f$ is continuous.
+  For the forward direction, suppose $\left| \int_{X} \! f \, \mathrm{d}\mu  \right| = \int_{X} \! \left| f \right| \, \mathrm{d}\mu $.
+  Using this we can obtain
+  \[
+  \left| \int_{\left\{ f > 0 \right\}} \! \left| f \right| \, \mathrm{d} \mu + \int_{\left\{ f < 0 \right\}} \! - \left| f \right| \, \mathrm{d} \mu  \right| = \left| \int_{X} \! f \, \mathrm{d} \mu  \right| = \int_{X} \! \left| f \right| \, \mathrm{d} \mu =  \int_{\left\{ f > 0 \right\}} \! \left| f \right| \, \mathrm{d} \mu + \int_{\left\{ f < 0 \right\}} \! - \left| f \right| \, \mathrm{d} \mu
+  .\] 
+  This is a specific case of the triangle inequality, so we can use the fact that for any $a,b \in \mathbb{R}^{}$, $\left| a + b \right| = \left| a \right| + \left| b \right|$ if and only if $ab \geq 0$.
+  Applying this we get
+  \[
+  \left( \int_{\left\{ f > 0 \right\}} \! \left| f \right| \, \mathrm{d} \mu  \right) \left( - \int_{\left\{ f < 0 \right\}} \! \left| f \right| \, \mathrm{d} \mu \right) = 0
+  \] 
+  where we have a strict equality since the two terms are of differing signs.
 
-  For the second part of the problem, we begin by noting that $f(0) = 0$ and \\$\lim_{r \to \infty}f(r) = \left| A \right| $.
-  Then, since $f$ is continuous, the Intermediate Value Theorem gives us the existence of some $x$ such that $\left| B \right| = f(x) = \frac{1}{\sqrt{2} }\left| A \right|$.
-  Lastly, since $B$ is defined as the intersection of $A$ with other sets, $B \subset A$.
+  TODO: Finish.
+
 \end{solution}
 
 \pagebreak
