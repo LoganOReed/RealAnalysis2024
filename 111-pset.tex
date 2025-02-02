@@ -1,0 +1,133 @@
+%! TEX root = **/000-main.tex
+% vim: spell spelllang=en:
+
+\begin{problem}{1}
+Let $f \in L(\mathbb{R})$ and for $h > 0$, define
+\[
+f_h(x) = \frac{1}{2h} \int_{x-h}^{x+h} f(t) \, dt.
+\]
+Show that $\|f_h\|_1 \leq \|f\|_1$, where
+\[
+\|f\|_1 = \int_{\mathbb{R}} |f(x)| \, dx.
+\]
+(You may assume that $\|f\|_1$ defines a norm on $L(\mathbb{R})$.)
+\end{problem}
+
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{2}
+Let $f$ be a non-negative measurable function on $\mathbb{R}$. Suppose that
+\[
+\int_{\mathbb{R}^2} f(4x)f(x - 3y) \, dx \, dy = 2.
+\]
+Calculate $\int_{-\infty}^\infty f(x) \, dx$.
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+
+
+\begin{problem}{3}
+Assume $\int_E |f|^p < \infty$ for some $p > 0$. Use Tonelli's theorem to show that
+\[
+\int_E |f|^p \, dx = p \int_0^\infty t^{p-1} m(\{x \in E : |f(x)| > t\}) \, dt.
+\]
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+
+
+\begin{problem}{4}
+\begin{enumerate}
+    \item Give an example of a set $E \subset \mathbb{R}^2$ such that $|E|_2 = 0$ (i.e., the measure of $E$ as a subset of $\mathbb{R}^2$ is 0) but $|E_x|_1 \neq 0$ for some $x \in \mathbb{R}$ (i.e., the measure of $E_x$ as a subset of $\mathbb{R}$ is not 0). Recall that $E_x = \{y \in \mathbb{R} : (x, y) \in E\}$.
+
+    \item Let $E \subset \mathbb{R}^{n+m}$ such that $|E|_{n+m} = 0$. Prove that 
+    \[
+    |\{x \in \mathbb{R}^n : |E_x| \neq 0\}| = 0.
+    \]
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+
+\begin{problem}{5}
+Let
+\[
+X := \left\{\{a_n\}_{n=0}^\infty : \sum_{n=0}^\infty |a_n| < \infty \right\}
+\]
+be the space of absolutely convergent sequences. Define the $\ell^1$ and $\ell^\infty$ metrics on the space by
+\[
+d_{\ell^1}(\{a_n\}, \{b_n\}) := \sum_{n=0}^\infty |a_n - b_n|,
+\]
+\[
+d_{\ell^\infty}(\{a_n\}, \{b_n\}) := \sup_{n \in \mathbb{N}} |a_n - b_n|.
+\]
+Show that these are both metrics on $X$, but show that there exist sequences $x^{(1)}, x^{(2)}, \ldots$ of elements of $X$ (i.e., sequences of sequences) which are convergent with respect to the $d_{\ell^\infty}$ metric but not with respect to the $d_{\ell^1}$ metric. Conversely, show that any sequence which converges in the $d_{\ell^1}$ metric automatically converges in the $d_{\ell^\infty}$ metric.
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+\begin{problem}{6}
+Let $|E| < \infty$ and let $X$ denote the class of Lebesgue measurable functions in $E$, equipped with the equivalence relation $f \sim g$ if $f = g$ almost everywhere. Given $f, g \in X$, define
+\[
+d(f, g) = \int_E \frac{|f(x) - g(x)|}{1 + |f(x) - g(x)|} \, dx.
+\]
+Prove that:
+\begin{enumerate}
+    \item $(X, d)$ is a metric space.
+    \item $f_k \to f$ in $(X, d)$ if and only if $f_k \to f$ in measure on $E$.
+
+    \text{HINT:} The function $\alpha(x) = \frac{x}{1+x}$ is increasing on $[0, \infty)$ and satisfies $\alpha(x+y) \leq \alpha(x) + \alpha(y)$.
+
+    \item Note that the set of Lebesgue measurable functions forms a vector space. Prove that the metric $d$ is not induced by a norm.
+
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+
+\begin{problem}{7}
+Prove that on $C[0, 1]$, the norms $\|f\|_\infty = \max_{x \in [0,1]} |f(x)|$ and $\|f\|_1 = \int_0^1 |f(x)| \, dx$ are not equivalent.
+\end{problem}
+
+\begin{solution}
+\end{solution}
+
+\pagebreak
+
+
+\begin{problem}{8}
+Show that the space of Lipschitz functions $f : [0, 1] \to \mathbb{R}$ is a complete metric space with respect to the metric determined by the norm
+\[
+  \|f\| = \sup_{x \in [0,1]} |f(x)| + \sup_{x, y \in [0,1], x \neq y} \frac{|f(x) - f(y)|}{|x - y|},
+\]
+but not with respect to the metric determined by
+\[
+\|f\|_{L^\infty} = \sup_{x \in [0,1]} |f(x)|.
+\]
+\end{problem}
+
+\begin{solution}
+\end{solution}
