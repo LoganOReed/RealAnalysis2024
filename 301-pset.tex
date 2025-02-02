@@ -81,9 +81,15 @@
   \left( \int_{\left\{ f > 0 \right\}} \! \left| f \right| \, \mathrm{d} \mu  \right) \left( - \int_{\left\{ f < 0 \right\}} \! \left| f \right| \, \mathrm{d} \mu \right) = 0
   \] 
   where we have a strict equality since the two terms are of differing signs.
+  However, strict equality only holds if one or both are zero.
+  Thus $f = \left| f \right|$ a.e. or $f = - \left| f \right|$ a.e.
 
-  TODO: Finish.
-
+  For the reverse direction, suppose $f = \left| f \right|$ a.e. or $f = - \left| f \right|$ a.e.
+  Then we have
+  \[
+  \int_{X} \! \pm \left| f \right| \, \mathrm{d} \mu = \int_{X} \! f \, \mathrm{d} \mu = \left| \int_{X} \! f \, \mathrm{d} \mu  \right|
+  ,\]
+  where the last equality holds as the first term is equal to its absolute value.
 \end{solution}
 
 \pagebreak
