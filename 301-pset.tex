@@ -16,6 +16,23 @@
 \end{problem}
 
 \begin{solution}
+  Throughout the proof we will use $\mu\left( a,b \right]$ as a shorthand for $\mu\left( \left( a,b \right] \right)$.
+
+  For part (a), let $x_{1} \leq x_{2} \in \mathbb{R}^{}$.
+  Note that $(-\infty, x_{1}] \subset (-\infty, x_{2}]$.
+  By monotonicity of measure,
+  \[
+    f\left( x_{1} \right) = \mu \left( -\infty, x_{1} \right] \leq \mu \left( -\infty, x_{2} \right] = f\left( x_{2} \right)
+  .\] 
+  So $f$ is monotone increasing.
+
+  For part (b), WLOG let $a < b \in \mathbb{R}^{}$.
+  Since $\left( -\infty, a \right] \sqcup \left( a,b \right] = \left( -\infty,b \right]$, 
+  \[
+    \mu \left( \left( -\infty, a \right] \sqcup \left( a,b \right] \right) = \mu \left( -\infty, a \right] + \mu \left( a,b \right] = \mu \left( -\infty, b \right]
+  .\] 
+  Thus $\mu\left( a,b \right] = f\left( b \right) - f\left( a \right)$.
+
   TODO: Ask sean or Ali about c and d.
 \end{solution}
 
@@ -128,5 +145,4 @@
   Thus $\overline{V} < < \mu$ and $\underline{V} < < \mu$.
   This proves the second if and only if statement.
   Therefore the if and only if chain has been proven.
-
 \end{solution}
