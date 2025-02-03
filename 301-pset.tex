@@ -16,24 +16,7 @@
 \end{problem}
 
 \begin{solution}
-  Let $f(r) = \left| A \cap \prod_{i=1}^{d } [-\frac{r}{2}, \frac{r}{2}] \right|$.
-  When $r\leq s$, $\left| \prod_{i=1}^{d } [-\frac{r}{2}, \frac{r}{2}] \right| \subset \left| \prod_{i=1}^{d } [-\frac{s}{2}, \frac{s}{2}] \right|$ and so the monotonicity of measures directly implies that $f$ is nondecreasing.
-  Also, since $\left| A \right| < \infty$, there exists some $M \in \mathbb{R}^{}$ such that $\left| A \right| < M$.
-  Then for sufficiently large $r$, $\left| f(r) \right| < M$, and so $f$ is bounded.
-  Next, fix $\varepsilon > 0$ and let $\delta = \frac{\varepsilon}{d}$.
-  Suppose $\left| x - y \right| < \delta$ and WLOG let $x \leq  y$, then
-    \begin{align*}
-      \left| f(x) - f(y) \right| &= \left| \left| A \cap \prod_{i=1}^{d } [-\frac{x}{2}, \frac{x}{2}] \right| - \left| A \cap \prod_{i=1}^{d } [-\frac{y}{2}, \frac{y}{2}] \right| \right| \\
-                                 &= \left| A \cap \left( \prod_{i=1}^{d } [-\frac{x}{2}, \frac{x}{2}] - \prod_{i=1}^{d } [-\frac{y}{2}, \frac{y}{2}] \right) \right| \tag{Class Corollary}\\
-                                 &= \left| A \cap \left( \prod_{i=1}^{d } [-\frac{y}{2}, -\frac{x}{2}] \cup  [\frac{x}{2}, \frac{y}{2}] \right) \right| \\
-                                 &\leq \left| \left( \prod_{i=1}^{d } [-\frac{y}{2}, -\frac{x}{2}] \cup  [\frac{x}{2}, \frac{y}{2}] \right) \right| \tag{Monotonicity} \\
-                                 &< d \left( \frac{\delta}{2} + \frac{\delta}{2} \right) = \varepsilon 
-    .\end{align*}
-  Thus $f$ is continuous.
-
-  For the second part of the problem, we begin by noting that $f(0) = 0$ and \\$\lim_{r \to \infty}f(r) = \left| A \right| $.
-  Then, since $f$ is continuous, the Intermediate Value Theorem gives us the existence of some $x$ such that $\left| B \right| = f(x) = \frac{1}{\sqrt{2} }\left| A \right|$.
-  Lastly, since $B$ is defined as the intersection of $A$ with other sets, $B \subset A$.
+  TODO: Ask sean or Ali about c and d.
 \end{solution}
 
 \pagebreak
@@ -45,22 +28,7 @@
 \end{problem}
     
 \begin{solution}
-  Let $G(f) = \left\{ (x,f(x)) : x \in [a,b] \right\}$.
-  Take $\varepsilon > 0$, and since $f$ is uniformly continuous there exists some $\delta \in \mathbb{R}^{}$ such that $\left| x - y \right| < \delta$ implies $\left| f(x) - f(y) \right|<\varepsilon$.
-  Also, let $n \in \mathbb{N}$ such that $\frac{b-a}{n} < \delta$.
-  Then $G(f)$ is contained within 
-  \[
-    \bigcup_{i=0}^{n-1} \left[a + \frac{(b-a)i}{n}, a + \frac{(b-a)(i+1)}{n} \right] \times \left[ f\left( \frac{(b-a)i}{n} \right) - \varepsilon, f\left( \frac{(b-a)i}{n}\right)  + \varepsilon \right]
-  .\] 
-  Using sub-additivity, we have
-  \begin{equation*}
-    \begin{split}
-      &m\left( \bigcup_{i=0}^{n-1} \left[a + \frac{(b-a)i}{n}, a + \frac{(b-a)(i+1)}{n} \right] \times \left[ f\left( \frac{(b-a)i}{n} \right) - \varepsilon, f\left( \frac{(b-a)i}{n}\right)  + \varepsilon \right] \right) \\ 
-      &\leq \sum_{i=0}^{n-1} m\left(  \left[a + \frac{(b-a)i}{n}, a + \frac{(b-a)(i+1)}{n} \right] \times \left[ f\left( \frac{(b-a)i}{n} \right) - \varepsilon, f\left( \frac{(b-a)i}{n}\right)  + \varepsilon \right] \right)\\
-      &= n \frac{2\varepsilon(b-a)}{n} = 2(b-a)\varepsilon.
-    \end{split}
-  \end{equation*}
-  Finally, taking $n \to \infty$ gives us $\left| G(f) \right| = 0$.
+  TODO: Double check final part.
 \end{solution}
 
 \pagebreak
@@ -103,13 +71,10 @@
 \end{problem}
 
 \begin{solution}
-  Leveraging the fact that the measure is invariant under translation, we have
-  \[
-    \bigcup_{x \in E}[x-1,x+1] = \bigcup_{x \in E} (x-1,x+1) \cup (E - 1) \cup (E+1)
-  .\] 
-  Since all but the last two terms are open, their union is open and thus measurable.
-  As mentioned previously, the last two terms are translations of a measurable set and so they are measurable.
-  Finally, the countable union of measurable sets are measurable, thus $F$ is measurable.
+  To begin, let us note that $\left| f \chi_{E_{j}} - f \right| = \left| f \chi_{E-E_{j}} \right|$ and $\left| f \chi_{E-E_{j}} \right| \leq \left| f \right|$.
+  Also, since $\left| f \right|$ is measurable we know that $\left| f \chi_{E_{j}} - f \right|$ is measurable.
+  Further, since $E-E_{j} \to \emptyset$ as $j \to \infty$, $\left| f \chi_{E_{j}} - f \right| = \left| f \chi_{E - E_{j}} \right| \to 0$ as $j \to \infty$.
+  Finally, by DCT we have $\int_{E} \! \left| f \chi_{E_{j}} - f \right| \, \mathrm{d} \mu \to 0 $ as $ j \to \infty$.
 \end{solution}
 
 \pagebreak
@@ -122,22 +87,13 @@
 \end{problem}
 
 \begin{solution}
-  Define the function $\# : [0,1] \to \mathbb{N} $ such that the first $4$ occurs at the $(\#(x)+1)$-th digit for $x \in [0,1]$, and let $A_{k} = \left\{ x\in[0,1] : \#(x) = k \right\}$.
-  Then we have $A_{i+1} \subseteq A_{i}$ and $A = \lim_{n \to \infty} A_{n} = \bigcap_{n=1}^{ \infty } A_{n} $.
-  So, from the class notes, $m(A) = \lim_{n \to \infty} m(A_{n})$.
-  Now, let us define the set $T(X) = \left\{ x \in X : \#(x) \neq  0  \right\}$. 
-  Obviously $A_{0} = T([0,1])$, and we can see that $A_{n+1} = 10^{-(n+1)}T(10^{n+1}A_{n})$.
-  This recursive relation can be seen as bit shifting forward until first place values in the set are the same as $[0,1]$, followed by a shift back to store the data.
-  Also note that $10^{n+1}A_{n}$ is a union of finite intervals whose bounds are in $\mathbb{N}$.
-  This gives us
+  Let $E \subset S$ be measurable.
+  Since $f_{k} \to f$ as $k \to \infty$, we have that $f_{k} \chi_{E} \to f \chi_{E}$ as $k \to \infty$.
+  Also, we know $\sup_{k}\left\{ f_{k} \chi_{E} \right\}$ is measurable since for any $\alpha \in \mathbb{R}^{}$, $\left( f_{k} \chi_{E} \right)^{-1}\left( \left( \alpha,\infty \right] \right)$ is measurable and so $\sup_{k}\left\{ f_{k} \chi_{E} \right\} = \bigcup_{k=1}^{\infty}  \left( f_{k} \chi_{E} \right)^{-1}\left( \left( \alpha,\infty \right] \right)$ is measurable. 
+  Obviously $\left| f_{k} \chi_{E} \right| \leq \sup_{k}\left\{ f_{k} \chi_{E} \right\}$ a.e., so by DCT, as $k \to \infty$, 
   \[
-  m(T(10^{n+1}A_{n})) = 10^{n+1} \frac{9}{10} m(A_{n}) = 9(10^{n})m(A_{n}) \\
-  \] 
-  and in turn we have
-  \[
-  m(A_{n+1}) = \frac{9}{10}m(A_{n}))
+  \int_{E} \! f_{k} \, \mathrm{d} \mu = \int_{S} \! f_{k} \chi_{E} \, \mathrm{d} \mu \to \int_{X} \! f \chi_{E} \, \mathrm{d} \mu = \int_{E} \! f \, \mathrm{d} \mu    
   .\] 
-  Finally, $m(A) = \lim_{n \to \infty} m(A_{n}) = 0$.
 \end{solution}
 
 \pagebreak
@@ -151,10 +107,26 @@
 \end{problem}
 
 \begin{solution}
-  Let $E \subset \mathbb{R}^{n}$ be measurable.
-  From class we can define $H = \bigcap_{n=0}^{\infty} G_{k}$ for $G_{k}$ open such that $A \subset H$ and $\left| A \right|_{e} = \left| H \right|_{e}$.
-  From subadditivity, we have $\left| A \right|_{e} \leq  \left| A \cap E \right|_{e} + \left| A - E \right|_{e}$.
-  Note that $H,H\cap E,H - E$ are measurable.
-  Then $\left| A \cap E \right|_{e} + \left| A - E \right|_{e} \leq \left| H \cap E \right|_{e} + \left| H - E \right|_{e} = \left| H \right|_{e} = \left| A \right|_{e}$.
-  I could not figure out a proof for the converse.
+  Let $Z \in \Sigma$ such that $\mu\left( Z \right) = 0$.
+  We will begin by proving the first if and only if statement.
+  For the forward direction, suppose $\phi < < \mu$.
+  Then, by definition, $\overline{V}\left( Z \right) = \sup_{A \subset Z, A \in \Sigma}\left\{ \phi\left( A \right) \right\} = 0$.
+  Using Jordan Decomposition, we get $\underline{V}\left( Z \right) = \overline{V}\left( Z \right) - \phi\left( Z \right) = 0 - 0 = 0$.
+  So, by definition, $\overline{V} < < \mu$ and $\underline{V} < < \mu$.
+  For the reverse direction, suppose $\overline{V} < < \mu$ and $\underline{V} < < \mu$.
+  By Jordan Decomposition, $\phi(Z) = \overline{V}\left( Z \right) - \underline{V}\left( Z \right) = 0 - 0 = 0$.
+  Thus $\phi < < \mu$.
+  This proves the first if and only if statement.
+
+  Now we will prove the second if and only if statement.
+  For the forward direction, suppose $\overline{V} < < \mu$ and $\underline{V} < < \mu$.
+  By definition, $V(Z) = \overline{V}\left( Z \right) + \underline{V}\left( Z \right) = 0 + 0 = 0$.
+  So $V < < \mu$.
+  For the reverse direction, suppose $V < < \mu$.
+  By definition, $V\left( Z \right) = \overline{V}\left( Z \right) + \underline{V}\left( Z \right) = 0$.
+  Since $\overline{V}$ and $\underline{V}$ are both nonnegative functions, $\overline{V}\left( Z \right) = \underline{V}\left( Z \right) = 0$.
+  Thus $\overline{V} < < \mu$ and $\underline{V} < < \mu$.
+  This proves the second if and only if statement.
+  Therefore the if and only if chain has been proven.
+
 \end{solution}
