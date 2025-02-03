@@ -45,7 +45,27 @@
 \end{problem}
     
 \begin{solution}
-  TODO: Double check final part.
+  For the forward direction, suppose $\lim_{k \to \infty} \int_{S} \! f^{k} \, \mathrm{d} \mu$ exists.
+  We have 
+  \[
+    \lim_{k \to \infty} \int_{S} \! f^{k} \, \mathrm{d} \mu = \lim_{k \to \infty} \int_{S-\left\{ f > 1 \right\}} \! f^{k} \, \mathrm{d} \mu + \lim_{k \to \infty} \int_{\left\{ f > 1 \right\}} \! f^{k} \, \mathrm{d} \mu \geq \lim_{k \to \infty} \int_{\left\{ f > 1 \right\}} \! f^{k} \, \mathrm{d} \mu
+  .\] 
+  Assume, for the sake of contradiction, that $\left| \left\{ f > 1 \right\} \right| > 0$.
+  Then, since $f$ is nonnegative, $f^{k+1} \geq f^{k}$ for any $k$ and $f^{k}$ is unbounded as $k \to \infty$ for any $x \in \left\{ f > 1 \right\}$.
+  So we have
+  \[
+  \lim_{k \to \infty} \int_{S} \! f^{k} \, \mathrm{d} \mu \geq \infty 
+  .\] 
+  This contradicts $\lim_{k \to \infty} \int_{S} \! f^{k} \, \mathrm{d} \mu$ existing, thus $\left| \left\{ f > 1 \right\} \right| = 0$.
+
+  For the reverse direction, suppose $\left| \left\{ f > 1 \right\} \right| = 0$.
+  Let $g(x) = 1$, which is measurable in $S$ since $\mu$ is of finite measure.
+  Similarly, $\chi_{\left\{ f = 1 \right\}} \in L\left( S, d \mu \right)$ since $\mu$ is of finite measure.
+  Also, $\left| f^{k} \right| \leq g$ a.e. and $f^{k} \to \chi_{\left\{ f = 1 \right\}}$ as $k \to \infty$.
+  So, by DCT,
+  \[
+  \lim_{k \to \infty} \int_{S} \! f^{k} \, \mathrm{d} \mu = \int_{S} \! \chi_{\left\{ f = 1 \right\}} \, \mathrm{d} \mu  
+  .\] 
 \end{solution}
 
 \pagebreak
