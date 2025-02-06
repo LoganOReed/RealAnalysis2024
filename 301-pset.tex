@@ -33,7 +33,19 @@
   .\] 
   Thus $\mu\left( a,b \right] = f\left( b \right) - f\left( a \right)$.
 
-  TODO: Ask sean or Ali about c and d.
+  For part (c), let $x_{n}$ be a sequence in $\mathbb{R}^{}$ such that $x_{n+1} \leq x_{n}$ and $x_{n} \to x$ for some $x \in \mathbb{R}^{}$.
+  Since $\mu$ is finite, $\mu$ is an a.s.f and 
+  \[
+    \lim_{n \to \infty} f\left( x_{n} \right) = \lim_{n \to \infty} \mu \left( -\infty, x_{n} \right] = \mu\left( \bigcap_{n=1}^{\infty}\left( -\infty,x_{n} \right] \right) = \mu\left( -\infty,x \right]
+  .\] 
+  Thus $f$ is continuous from the right.
+
+  For part (d), let $x_{n}$ be a sequence in $\mathbb{R}^{}$ such that $x_{n+1} \leq x_{n}$ and $x_{n} \to -\infty$. 
+  Then, along the same lines as part (c) we have 
+  \[
+    \lim_{n \to \infty} f\left( x_{n} \right) = \lim_{n \to \infty} \mu \left( -\infty, x_{n} \right] = \mu\left( \bigcap_{n=1}^{\infty}\left( -\infty,x_{n} \right] \right) = \mu\left( \emptyset \right) = 0
+  .\]
+  Thus we have $\lim_{x \to -\infty} f\left( x  \right) = 0$.
 \end{solution}
 
 \pagebreak
