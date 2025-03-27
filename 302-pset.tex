@@ -1,0 +1,29 @@
+%! TEX root = **/000-main.tex
+% vim: spell spelllang=en:
+
+\begin{problem}{1}
+  Let $\left( X, \Sigma, \mu \right)$ be a $\sigma$-finite measure space and let $f : X \to \left[ 0, \infty \right) $ be a $\mu$-measurable function.
+  Define the measure
+  \[
+  \mu_{f}\left( E \right) = \int_{E} \! f \, \mathrm{d}\mu 
+  .\] 
+  Prove that $\mu_{f}$ is $\sigma$-finite.
+\end{problem}
+
+\begin{solution}
+To prove $\sigma$-finiteness we will construct a specific $E_{n}$ such that $\bigcup_{n=0}^{\infty} E_{n} = X$ and $\mu_{f}\left( E_{n} \right) < \infty$.
+To begin, since $\mu$ is $\sigma$-finite we can define $A_{n}$ such that $\bigcup_{n=0}^{\infty} A_{n} = X$ and $\mu\left( A_{n} \right) < \infty$.
+Now, we can define $E_{n} = \left\{ x \in A_{n} : f\left( x \right) \leq n \right\}$.
+Since $f$ is $\mu$-measurable $E_{n}$ is a measurable set.
+Also, $\mu\left( E_{n} \right) < \infty$ by monotonicity.
+Now we will show that $\mu_{f}$ with $E_{n}$ satisfy our definition of $\sigma$-finite.
+First, $\bigcup_{n=0}^{\infty} E_{n} = X $ by our definition of $ A_{n}$ and $f$ being measurable.
+Second, we have
+\begin{align*}
+  \mu_{f}\left( E_{n} \right) &= \int_{E_{n}} \! f \, \mathrm{d}\mu \\
+                              &\leq \int_{E_{n}} \! n \, \mathrm{d}\mu \\
+                              &= n \mu\left( E_{n} \right) \\
+                              &< \infty
+.\end{align*}
+Therefore $\mu_{f}$ is $\sigma$-finite.
+\end{solution}
